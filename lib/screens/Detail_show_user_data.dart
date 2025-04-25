@@ -298,10 +298,10 @@ class _UserDetailPageState extends State<UserDetailPage> {
 
 
   void _showEditDialog(BuildContext context) {
-    final _firstNameController = TextEditingController(text: currentUser.firstName);
-    final _lastNameController = TextEditingController(text: currentUser.lastName);
-    final _emailController = TextEditingController(text: currentUser.email);
-    final _phoneController = TextEditingController(text: currentUser.phone);
+    final firstNameController = TextEditingController(text: currentUser.firstName);
+    final lastNameController = TextEditingController(text: currentUser.lastName);
+    final emailController = TextEditingController(text: currentUser.email);
+    final phoneController = TextEditingController(text: currentUser.phone);
 
     showDialog(
       context: context,
@@ -310,10 +310,10 @@ class _UserDetailPageState extends State<UserDetailPage> {
         content: SingleChildScrollView(
           child: Column(
             children: [
-              TextField(controller: _firstNameController, decoration: const InputDecoration(labelText: "First Name")),
-              TextField(controller: _lastNameController, decoration: const InputDecoration(labelText: "Last Name")),
-              TextField(controller: _emailController, decoration: const InputDecoration(labelText: "Email")),
-              TextField(controller: _phoneController, decoration: const InputDecoration(labelText: "Phone")),
+              TextField(controller: firstNameController, decoration: const InputDecoration(labelText: "First Name")),
+              TextField(controller: lastNameController, decoration: const InputDecoration(labelText: "Last Name")),
+              TextField(controller: emailController, decoration: const InputDecoration(labelText: "Email")),
+              TextField(controller: phoneController, decoration: const InputDecoration(labelText: "Phone")),
             ],
           ),
         ),
@@ -326,10 +326,10 @@ class _UserDetailPageState extends State<UserDetailPage> {
             onPressed: () async {
               final updatedUser = UserProfile(
                 id: currentUser.id,
-                firstName: _firstNameController.text,
-                lastName: _lastNameController.text,
-                email: _emailController.text,
-                phone: _phoneController.text,
+                firstName: firstNameController.text,
+                lastName: lastNameController.text,
+                email: emailController.text,
+                phone: phoneController.text,
                 profileImage: currentUser.profileImage,
               );
 
